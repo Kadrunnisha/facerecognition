@@ -2,4 +2,5 @@ flask
 opencv-python
 numpy
 pillow
-simple_facerec
+face-recognition
+dlib
