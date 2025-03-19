@@ -3,5 +3,6 @@ opencv-python
 numpy
 pillow
 face-recognition
-dlib
+git+https://github.com/davisking/dlib.git
 gunicorn
+
