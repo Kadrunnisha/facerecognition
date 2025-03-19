@@ -1,8 +1,7 @@
-flask
+Flask
 gunicorn
-opencv-python-headless  # Lighter version, avoids GUI errors in containers
+opencv-python
 numpy
 pillow
+face-recognition
 face-recognition-models
-cmake
-dlib-bin  # Precompiled version, avoids build errors

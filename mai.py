@@ -37,5 +37,7 @@ def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Set PORT for Railway
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = os.getenv("PORT", "5000")  # Default to 5000 if PORT is not set
+    if not port.isdigit():  # Ensure PORT is a valid number
+        port = "5000"
+    app.run(host='0.0.0.0', port=int(port), debug=True)

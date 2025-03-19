@@ -1,10 +1,10 @@
-# Use an official Python image
+# Use official Python image
 FROM python:3.11-slim
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies (required for dlib)
+# Install dependencies
 RUN apt-get update && apt-get install -y cmake g++ wget unzip 
 
 # Copy project files
@@ -14,11 +14,11 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Set the port for Railway
+# Set default PORT explicitly
 ENV PORT=5000  
 
 # Expose the application port
 EXPOSE 5000  
 
-# Start the application
+# Start Gunicorn server
 CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:5000", "mai:app"]
