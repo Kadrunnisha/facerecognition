@@ -1,8 +1,8 @@
 flask
-opencv-python
+gunicorn
+opencv-python-headless  # Lighter version, avoids GUI errors in containers
 numpy
 pillow
-face-recognition
-git+https://github.com/davisking/dlib.git
-gunicorn
-
+face-recognition-models
+cmake
+dlib-bin  # Precompiled version, avoids build errors
