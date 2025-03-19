@@ -4,8 +4,9 @@ FROM ubuntu:20.04
 # Set non-interactive mode for apt-get
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install system dependencies for dlib and face recognition
+# Install system dependencies for dlib, OpenCV, and face recognition
 RUN apt-get update && apt-get install -y \
+    git \
     cmake \
     g++ \
     python3-dev \
